@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Matching Game</title>
+    <link rel="shortcut icon" type="image/jpg" href="Images/fevicon.PNG"/>
+    <link rel="stylesheet" href="gameStyle.css">
+    <style>
+        #title {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Ensures content is centered */
+            font-size: 24px; /* Adjust as needed */
+        }
+
+        #user {
+            margin-right: 10px; /* Space between the user greeting and the game title */
+        }
+
+        #logo {
+            font-weight: bold; /* Makes the game title bold */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="gameScript.js"></script>
+    <script>
+        $(document).ready(function() {
+            var username = localStorage.getItem('username'); // Retrieve the username
+            if (!username) {
+                alert('No username found. Redirecting to start page.');
+                window.location.href = 'index.html'; // Redirect back if no username found
+            }
+            document.getElementById('usernameDisplay').textContent = username; // Display username
+        });
+    </script>
+</head>
+<body>
+    <div id="ol"> </div>
+    <div style="height: 8px;"></div>
+    <div id="title">
+        <span id="user">Hello, <span id="usernameDisplay"></span>!</span>
+        <span id="logo">MEMORY MATCHING GAME</span>
+    </div>
+
+    <div style="height: 40px;"></div>
+
+    <center>
+        <table cellspacing="0"></table>
+    </center>
+</body>
+</html>
